@@ -1,0 +1,281 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Rising the Tide | Templates</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="html2pdf.bundle.min.js"></script>
+
+    <script>
+        function generatePDF() {
+            // Choose the element that our invoice is rendered in.
+            const element = document.getElementById("pdf_container");
+            // Choose the element and save the PDF for our user.
+            html2pdf()
+                .from(element)
+                .save();
+        }
+    </script>
+</head>
+<body>
+    <div id="nav_bar">
+        <div id="nav_link_container">
+            <div id="glossary_link" class="nav_link">Glossary</div>
+            <div id="resources_link" class="nav_link">Resources</div>
+            <div id="homepage_link" class="nav_link">Homepage</div>
+        </div>
+    </div>
+    <div id="main_container">
+        <div id="title_bar">
+            <svg version="1.1" id="earth_logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 511.999 511.999" xml:space="preserve">
+                <path style="fill:var(--main_color);" d="M441.374,79.519l-26.485,17.656l-44.141-8.828l-26.485-8.828l-35.313,8.828l-26.485-8.828 l17.656-35.313h35.313l34.607-17.303C396.73,40.101,420.875,57.916,441.374,79.519z" />
+                <path style="fill:var(--main_color);" d="M238.325,44.206l-8.828,26.485l-26.485,8.828l-26.485,44.141l-44.141,26.485l-61.797,8.828v26.485 l17.656,17.656v35.313L61.762,220.77l-26.485-17.656l-15.361-46.171C46.356,93.935,96.898,44.126,160.284,18.604l25.072,16.774 L238.325,44.206z" />
+                <polygon style="fill:var(--main_color);" points="255.982,291.395 247.154,335.536 211.841,370.849 211.841,397.334 176.528,423.818 176.528,467.959 150.044,459.131 132.387,414.99 132.387,326.708 88.246,317.88 70.59,282.567 70.59,256.082 88.246,238.426 114.731,211.941 132.387,247.254 194.184,247.254 220.669,291.395 	" />
+                <path style="fill:var(--main_color);" d="M479.335,130.987c48.193,85.978,42.702,191.996-14.125,272.526l-23.836-23.836v-35.313 l-17.656-35.313l-17.656-35.313v-35.313l-26.485-17.656l-35.313,8.828l-61.797-26.485l-8.828-61.797l26.485-26.485h52.969 l17.656,26.485l52.969,8.828l52.969-17.656L479.335,130.987z" />
+                <path style="fill:var(--secondary_color);" d="M308.951,88.347l35.313-8.828l26.485,8.828l44.141,8.828l26.485-17.656 c14.787,15.476,27.544,32.77,37.961,51.468l-2.648,1.501l-52.969,17.656l-52.969-8.828l-17.656-26.485h-52.969l-26.485,26.485 l8.828,61.797l61.797,26.485l35.313-8.828l26.485,17.656v35.313l17.656,35.313l17.656,35.313v35.313l23.836,23.836 c-81.528,115.526-241.275,143.079-356.792,61.55C10.311,395.815-26.494,267.691,19.916,156.942l15.361,46.171l26.485,17.656 l26.485,17.656L70.59,256.082v26.485l17.656,35.313l44.141,8.828v88.282l17.656,44.141l26.485,8.828v-44.141l35.313-26.485v-26.485 l35.313-35.313l8.828-44.141h-35.313l-26.485-44.141h-61.797l-17.656-35.313l-26.485,26.485v-35.313L70.59,185.457v-26.485 l61.797-8.828l44.141-26.485l26.485-44.141l26.485-8.828l8.828-26.485l-52.969-8.828l-25.072-16.774 c67.889-27.341,144.235-24.322,209.758,8.299l-34.607,17.303h-35.313l-17.656,35.313L308.951,88.347z" />
+            </svg>
+            <div id="title">The Initiative</div>
+        </div>
+        <div id="pdf_container">
+            <span id="pdf_title">Test PDF</span><br><br>
+            <input type="text" id="pdf_input"/>
+        </div>
+        <button onclick="generatePDF()">Download as PDF</button>
+    </div>
+</body>
+<style>
+    body {
+        margin: 0px;
+        padding: 0px;
+        --main_color: #ade498;
+        --secondary_color: #7fdbda;
+        --white: #effffb;
+        --black: #272727;
+        font-family: 'Noto Sans', sans-serif;
+    }
+
+    #nav_bar {
+        z-index: 2;
+        height: 40px;
+        width: 100%;
+        background-color: var(--black);
+        color: var(--white);
+        position: fixed;
+    }
+
+    #nav_link_container {
+        width: 1400px;
+        margin: 0px auto;
+    }
+
+    .nav_link {
+        font-size: 20px;
+        float: right;
+        margin: 5px 15px;
+        vertical-align: middle;
+        cursor: pointer;
+    }
+
+        .nav_link:hover {
+            color: var(--main_color);
+        }
+
+    #main_container {
+        z-index: 1;
+        width: 1400px;
+        height: 1360px;
+        margin: 0px auto;
+        padding-top: 40px;
+    }
+
+    #earth_logo {
+        height: 100px;
+        width: 100px;
+        position: relative;
+        margin: 30px;
+        float: left;
+    }
+
+    #title {
+        font-size: 80px;
+        margin: 30px 10px;
+        color: var(--main_color);
+        float: left;
+    }
+
+    #big_article {
+        position: relative;
+        width: 96%;
+        height: 700px;
+        margin: 200px auto 0px auto;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    #big_article_image {
+        background-image: url(images/big_image.jpg);
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    #big_article:hover #big_article_image {
+        transform: scale(1.2);
+        transition: all 1s;
+    }
+
+    #big_article_title {
+        color: #effffb;
+        font-size: 60px;
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+    }
+
+    #small_article_container {
+        margin-top: 30px;
+        margin-left: 1%;
+        width: 102%;
+    }
+
+    .small_articles {
+        float: left;
+        position: relative;
+        width: 30%;
+        height: 200px;
+        margin: 0px 1%;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .small_article_images {
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    .small_article_titles {
+        color: var(--white);
+        font-size: 30px;
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+    }
+
+    #small_article_image_1 {
+        background-image: url(images/small_image_1.jpg);
+    }
+
+    #small_article_1:hover #small_article_image_1 {
+        transform: scale(1.2);
+        transition: all 1s;
+    }
+
+    #small_article_image_2 {
+        background-image: url(images/small_image_2.jpg);
+    }
+
+    #small_article_2:hover #small_article_image_2 {
+        transform: scale(1.2);
+        transition: all 1s;
+    }
+
+    #small_article_image_3 {
+        background-image: url(images/small_image_3.jpg);
+    }
+
+    #small_article_3:hover #small_article_image_3 {
+        transform: scale(1.2);
+        transition: all 1s;
+    }
+
+    #footer {
+        background-color: var(--main_color);
+        width: 100%;
+        height: 800px;
+    }
+
+    #footer_container {
+        width: 1400px;
+        margin: 0% auto;
+        height: 100%;
+        position: relative;
+    }
+
+    #quick_link_container {
+        float: left;
+        width: 40%;
+        margin: 100px 5%;
+    }
+
+    #more_info_container {
+        float: left;
+        width: 40%;
+        margin: 100px 5%;
+    }
+
+    .quick_links {
+        margin: 20px 10px;
+        font-size: 25px;
+        color: var(--black);
+        cursor: pointer;
+    }
+
+    #quick_link_title {
+        margin-left: 0px;
+        font-weight: bold;
+    }
+
+    .more_infos {
+        margin: 20px 10px;
+        font-size: 25px;
+        color: var(--black);
+        cursor: pointer;
+    }
+
+    #more_info_title {
+        margin-left: 0px;
+        font-weight: bold;
+    }
+
+    #footer_logo {
+        height: 100px;
+        width: 100px;
+        position: absolute;
+        margin: 20px;
+        bottom: 100px;
+        left: 50px;
+    }
+
+    #footer_title {
+        font-size: 80px;
+        margin: 30px 10px;
+        color: var(--black);
+        position: absolute;
+        bottom: 90px;
+        left: 200px;
+    }
+
+    #pdf_container {
+        border: 1px solid var(--black);
+        margin: 200px auto 0px auto;
+        height: 800px;
+        position: relative;
+    }
+
+    #pdf_title {
+        margin: 20px;
+    }
+
+    #pdf_input {
+        position: absolute;
+        left: 20px;
+    }
+
+</style>
+</html>
