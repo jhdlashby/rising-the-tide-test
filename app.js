@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const path = require('path');
 const router = express.Router();
-const port = 3000
+const port = process.env.PORT
 
 app.use(express.static(path.join(__dirname, 'html2pdf')));
 
