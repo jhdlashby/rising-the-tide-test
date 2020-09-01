@@ -5,7 +5,7 @@ body {
     --main_color: #551A8B;
     --white: #FFF;
     --black: #272727;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans', Arial, sans-serif;
 }
 
 #nav_bar {
