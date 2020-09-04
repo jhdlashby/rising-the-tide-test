@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Rising the Tide | Templates</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="main_style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="html2pdf.bundle.min.js"></script>
+
+    <script>
+        function generatePDF() {
+            // Choose the element that our invoice is rendered in.
+            const element = document.getElementById("pdf_container");
+            // Choose the element and save the PDF for our user.
+            html2pdf().from(element).save('rising_the_tide');
+        }
+    </script>
+</head>
+<body>
+    <div id="nav_bar">
+        <div id="nav_link_container">
+            <div id="glossary_link" class="nav_link">Glossary</div>
+            <div id="resources_link" class="nav_link">Resources</div>
+            <div id="resources_link" class="nav_link">Templates</div>
+            <div id="homepage_link" class="nav_link" onclick="navigateHomepage()">Home</div>
+        </div>
+    </div>
+    <div id="main_container" style="margin-top: 50px;">
+        <div id="pdf_container">
+            <img src="test_image.png" style="position: absolute; top: 720px; width: 100%; height: auto; transform: scale(-1, 0.8);" />
+            <img src="business_declares.png" style="position: absolute; top: 1050px; left: 420px; width: auto; height: 40px;" />
+            <img src="future_economy_network.png" style="position: absolute; top: 1050px; left: 540px; width: auto; height: 40px;" />
+            <img src="do_nation.png" style="position: absolute; top: 1050px; left: 600px; width: auto; height: 40px;" />
+            <img src="b_lab.png" style="position: absolute; top: 1030px; left: 710px; width: auto; height: 60px;" />
+            <div id="pdf_text_container" style="margin-left: 30px;">
+                <div id="pdf_title">Rising the Tide</div>
+                <div id="fact_title" class="pdf_texts">Fact</div>
+                <textarea maxlength="150" rows="3" cols="66" type="text" id="fact_input" class="pdf_inputs"></textarea>
+                <div id="ipcc_title" class="pdf_texts">IPCC Recomendation</div>
+                <textarea rows="3" cols="66" type="text" id="ipcc_input" class="pdf_inputs"></textarea>
+                <div id="contribution_title" class="pdf_texts">We are contributing to this recommendation by...</div>
+                <textarea rows="12" cols="66" type="text" id="contribution_input" class="pdf_inputs" style="height: 285px;"></textarea>
+                <div id="talking_title" class="pdf_texts" style="text-align: center; margin: 40px 60px 0px 290px; font-size: 30px; color: var(--main_color);">Let's get talking and driving a sustainable future!</div>
+                <div id="partners_title" class="pdf_texts" style="margin: 140px 35px 0px 395px">Want to help fight climate change?<br>Visit out partner networks</div>
+            </div>
+        </div>
+        <div id="pdf_button_container" style="width: 792px; height: 50px; margin: 20px auto; position: relative;">
+            <svg onclick="generatePDF()" fill="var(--main_color)" style="width: 50px; height: 50px; position: absolute; right: 0px; cursor: pointer;" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"> <path d="m256 362.667969c-8.832031 0-16-7.167969-16-16v-330.667969c0-8.832031 7.167969-16 16-16s16 7.167969 16 16v330.667969c0 8.832031-7.167969 16-16 16zm0 0" /> <path d="m256 362.667969c-4.097656 0-8.191406-1.558594-11.308594-4.695313l-85.332031-85.332031c-6.25-6.25-6.25-16.382813 0-22.636719 6.25-6.25 16.382813-6.25 22.636719 0l74.023437 74.027344 74.027344-74.027344c6.25-6.25 16.386719-6.25 22.636719 0 6.25 6.253906 6.25 16.386719 0 22.636719l-85.335938 85.332031c-3.15625 3.136719-7.25 4.695313-11.347656 4.695313zm0 0" /> <path d="m453.332031 512h-394.664062c-32.363281 0-58.667969-26.304688-58.667969-58.667969v-96c0-8.832031 7.167969-16 16-16s16 7.167969 16 16v96c0 14.699219 11.96875 26.667969 26.667969 26.667969h394.664062c14.699219 0 26.667969-11.96875 26.667969-26.667969v-96c0-8.832031 7.167969-16 16-16s16 7.167969 16 16v96c0 32.363281-26.304688 58.667969-58.667969 58.667969zm0 0" /> </svg>
+        </div>
+        </div>
+</body>
+</html>
+<script>
+    function navigateHomepage() {
+        window.location.href = '/';
+    }
+</script>
+<style>
+    #pdf_container {
+        border: 1px solid var(--black);
+        margin: 0px auto;
+        height: 1120px;
+        width: 792px;
+        position: relative;
+    }
+
+    #pdf_title {
+        font-size: 40px;
+        margin: 30px 250px 40px 220px;
+        color: var(--main_color);
+    }
+
+    .pdf_texts {
+        margin: 20px 0px 10px 0px;
+        font-size: 20px;
+        color: black;
+    }
+
+    .pdf_inputs {
+        margin: 0px;
+        width: 732px;
+        height: 70px;
+        font-size: 18px;
+        resize: none;
+        overflow: hidden;
+        padding: 0px;
+        font-family: 'Noto Sans', Arial, sans-serif;
+    }
+
+</style>
